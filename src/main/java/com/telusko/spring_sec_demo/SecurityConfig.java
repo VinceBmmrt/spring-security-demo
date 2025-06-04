@@ -20,7 +20,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
-                .formLogin(withDefaults());
+                .httpBasic(withDefaults());
 
         return http.build();
     }
