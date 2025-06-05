@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 public class StudentController {
-
+ 
     List<Student> students = new ArrayList<>(List.of(
             new Student(1, "Jimmy", "java"),
             new Student(2, "Usopp", "python")
