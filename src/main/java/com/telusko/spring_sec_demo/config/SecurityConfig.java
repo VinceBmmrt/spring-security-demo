@@ -24,6 +24,29 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+
+
+//        Customizer<CsrfConfigurer<HttpSecurity>> custCsrf = new Customizer<CsrfConfigurer<HttpSecurity>>() {
+//            @Override
+//            public void customize(CsrfConfigurer<HttpSecurity> configurer) {
+//                configurer.disable();
+//            }
+//        };
+//
+//        Customizer<AuthorizeHttpRequestsConfigurer<HttpSecurity>.AuthorizationManagerRequestMatcherRegistry> custHttp = new Customizer<AuthorizeHttpRequestsConfigurer<org.springframework.security.config.annotation.web.builders.HttpSecurity>.AuthorizationManagerRequestMatcherRegistry>() {
+//            @Override
+//            public void customize(
+//                    AuthorizeHttpRequestsConfigurer<HttpSecurity>.
+//                            AuthorizationManagerRequestMatcherRegistry registry) {
+//                registry.anyRequest().authenticated();
+//
+//            }
+//        };
+//
+//        http.authorizeHttpRequests(custHttp);
+//        http.csrf(custCsrf);
+//
+//
         return http.build();
     }
 
